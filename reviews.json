@@ -1,0 +1,60 @@
+{
+    "reviews": {
+        "general": [
+            "Great experience overall, very satisfied with my visit!",
+            "The crew was friendly and efficient, keep it up!",
+            "Love this location, always consistent quality",
+            "Pretty good experience, nothing to complain about",
+            "Staff was kind and speedy!",
+            "These people actually work hard, appreciate them!",
+            "Very knowledgeable staff, handled my order perfectly",
+            "Good job guys, keep up the great work!",
+            "This is my favorite McDonald's location",
+            "Nice place, always clean and welcoming",
+            "Handled my huge order really well, great job!",
+            "Fast service, would definitely recommend this location",
+            "Best McDonald's around, always a great experience",
+            "The crew is nice and always gets my order right",
+            "Actually got my extra pickles this time, thanks!",
+            "Fresh food and friendly faces, what more can you ask for?",
+            "A guy handed me food and said Have a good one! Nice people, good food!",
+            "This is the best McDs out there",
+            "Pretty good, this is the best location for sure",
+            "Good overall experience, will be coming back soon",
+            "Everything was fresh and hot, exactly what I wanted",
+            "Love coming here, the team always takes care of us",
+            "Quick and accurate, perfect drive-thru experience",
+            "The manager was very helpful when I had a question",
+            "Clean restaurant and friendly staff, highly recommend",
+            "Always a smooth experience at this location",
+            "Food was prepared perfectly, no complaints at all",
+            "Wonderful crew working today, very attentive",
+            "Got in and out quickly, food was hot and fresh",
+            "Consistently great service every time I visit"
+        ],
+        "breakfast": [
+            "The breakfast was hot and fresh, loved the McMuffin!",
+            "Morning crew was super friendly and fast",
+            "Best breakfast sandwich around, always on point",
+            "Coffee was perfect and the hash browns were crispy",
+            "Love the breakfast menu, wish it was all day though!",
+            "No breakfast after 10:30 really sucks but still good regardless",
+            "Great start to my morning, thanks McDonald's crew!",
+            "Egg McMuffin was cooked perfectly today",
+            "The breakfast burrito was loaded, very satisfied",
+            "Morning staff is always so cheerful, makes my day"
+        ],
+        "lunch": [
+            "The Big Mac was fresh and delicious today!",
+            "Nice fresh Big Mac, exactly how I like it",
+            "Good Big Macs as always, consistent quality",
+            "Quarter Pounder was juicy and hot off the grill",
+            "Chicken nuggets were perfectly crispy",
+            "Fries were hot and salted just right",
+            "The McChicken never disappoints at this location",
+            "Got a great combo meal, everything was fresh",
+            "Love the McRib, please bring it back permanently!",
+            "Cheeseburger was on point today, great job crew"
+        ]
+    }
+}
