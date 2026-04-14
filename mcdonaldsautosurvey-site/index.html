@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="McDVOICE Auto Survey — Scan your receipt and get your validation code instantly.">
+    <title>McDVOICE Auto Survey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-wrapper">
+                <span class="logo-icon">🍔</span>
+            </div>
+            <h1 class="app-title">McDVOICE Auto Survey</h1>
+            <p class="app-subtitle">Scan receipt → Get validation code instantly</p>
+        </header>
+
+        <!-- Configuration Notice (for setting API URL locally if needed) -->
+        <div id="config-notice" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 0.8rem; color: #ffcccc;">
+            <strong>Setup Needed:</strong> Open <code>app.js</code> and change <code>API_BASE_URL</code> to point to your hosted Python backend.
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <span class="icon">⚠️</span>
+            <span>For educational purposes only. This tool automates the McDonald's customer satisfaction survey. Use responsibly.</span>
+        </div>
+
+        <!-- Input Card -->
+        <div class="card" id="input-card">
+            <div class="mode-tabs">
+                <button class="mode-tab active" data-mode="receipt" id="tab-receipt">📋 Receipt Code</button>
+                <button class="mode-tab" data-mode="store" id="tab-store">🏪 Store Info</button>
+            </div>
+
+            <!-- Receipt Code Mode -->
+            <div id="mode-receipt">
+                <p class="card-title">Enter your 26-digit receipt code</p>
+                <div class="code-fields">
+                    <input type="text" class="code-field" id="cn1" maxlength="5" placeholder="XXXXX" inputmode="numeric" autocomplete="off">
+                    <span class="code-separator">-</span>
+                    <input type="text" class="code-field" id="cn2" maxlength="5" placeholder="XXXXX" inputmode="numeric" autocomplete="off">
+                    <span class="code-separator">-</span>
+                    <input type="text" class="code-field" id="cn3" maxlength="5" placeholder="XXXXX" inputmode="numeric" autocomplete="off">
+                    <span class="code-separator">-</span>
+                    <input type="text" class="code-field" id="cn4" maxlength="5" placeholder="XXXXX" inputmode="numeric" autocomplete="off">
+                    <span class="code-separator">-</span>
+                    <input type="text" class="code-field" id="cn5" maxlength="5" placeholder="XXXXX" inputmode="numeric" autocomplete="off">
+                    <span class="code-separator">-</span>
+                    <input type="text" class="code-field" id="cn6" maxlength="1" placeholder="X" inputmode="numeric" autocomplete="off">
+                </div>
+
+                <!-- QR Scanner -->
+                <div class="qr-section">
+                    <div class="qr-divider"><span>or scan receipt</span></div>
+                    <button class="qr-btn" id="qr-toggle">
+                        <span class="icon">📷</span>
+                        <span id="qr-btn-text">Open Camera</span>
+                    </button>
+                    <div id="qr-reader"></div>
+                </div>
+            </div>
+
+            <!-- Store Info Mode -->
+            <div id="mode-store" style="display: none;">
+                <p class="card-title">Auto-generate survey with store info</p>
+                <div class="store-fields">
+                    <div class="field-group">
+                        <label class="field-label" for="store-number">Store Number</label>
+                        <input type="text" class="field-input" id="store-number" placeholder="e.g. 12345" inputmode="numeric" autocomplete="off">
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="field-label" for="ks-number">Register / KS #</label>
+                            <input type="text" class="field-input" id="ks-number" placeholder="01" value="01" inputmode="numeric" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top: 20px;">
+                <button class="btn-primary" id="btn-submit">
+                    <span id="btn-text">🚀 Start Survey</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="card progress-section" id="progress-card">
+            <p class="card-title">Survey Progress</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="progress-info">
+                <span class="progress-message" id="progress-message">Starting...</span>
+                <span class="progress-percent" id="progress-percent">0%</span>
+            </div>
+            <div class="step-log" id="step-log"></div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="card result-section" id="result-card">
+            <!-- Filled dynamically -->
+        </div>
+
+        <!-- History Card -->
+        <div class="card history-section" id="history-card">
+            <p class="card-title">📜 Past Codes</p>
+            <div id="history-list">
+                <div class="history-empty">No surveys completed yet</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p class="footer-text">
+                McDVOICE Auto Survey Frontend<br>
+                Educational purposes only · Not affiliated with McDonald's
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
